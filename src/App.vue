@@ -1,15 +1,17 @@
 <template>
-  <h1 :class=" classCounter ">{{counter}}</h1>
-   <button @click='incrementar'>Incrementar</button>
-   <button @click='decrementar'>Decrementar</button>
-   <button @click='resetear'>Resetear</button>
-   <button @click='agregar' :disabled="isNumero">Agregar</button>
-   <br/>
-   <div>{{ arr }}</div>
-   <ul>
-    <li v-for=" (num, index) in arr" :key="index"> {{ num }}</li>
+  <div class="container text-center">
+    <h1 :class=" classCounter ">{{counter}}</h1>
+   <button class="btn btn-primary" @click='incrementar'>Incrementar</button>
+   <button class="btn btn-danger" @click='decrementar'>Decrementar</button>
+   <button class="btn btn-secondary" @click='resetear'>Resetear</button>
+   <button class="btn btn-warning" @click='agregar' :disabled="isNumero">Agregar</button>
+   
+   <ul class="list-group">
+    <li class="list-group-item" v-for=" (num, index) in arr" :key="index"> {{ num }}</li>
    </ul>
+  </div>  
 </template>
+  
 
 <script  setup>
     import {computed, ref} from 'vue';
